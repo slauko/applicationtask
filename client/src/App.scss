@@ -1,0 +1,29 @@
+.Mobile {
+	max-width: 400px;
+
+	p {
+	}
+	.Inputs {
+		.Dropdown {
+		}
+		.Fields {
+		}
+		.Buttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			input {
+			}
+		}
+	}
+}
+
+.Desktop {
+	.Grid {
+		.Header {
+			input {
+				text-align: center;
+			}
+		}
+	}
+}
