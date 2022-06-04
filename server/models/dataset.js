@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 const datasetSchema = new Schema({
 	material: String,
-	changenr: Number,
+	chargenr: String,
 	amount: Number,
 	time: String,
 });
+datasetSchema.plugin(AutoIncrement, {inc_field: 'index'});
 const Dataset = mongoose.model('Dataset', datasetSchema);
-datasetSchema.plugin(AutoIncrement, {inc_field: 'id'});
 module.exports = Dataset;

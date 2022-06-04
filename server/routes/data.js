@@ -16,13 +16,16 @@ router.get('/:id', (req, res) => {
 });
 //add new dataset
 router.post('/', (req, res) => {
-	Dataset.create(req.body)
+	const newData = {...req.body, time: Date.now()};
+	Dataset.create(newData)
 		.then((dataset) => res.json(dataset))
 		.catch((err) => res.status(400).json({message: 'Error creating new dataset'}));
 });
 //update dataset
 router.put('/:id', (req, res) => {
-	Dataset.findByIdAndUpdate(req.params.id, req.body)
+	const newData = {...req.body, time: Date.now()};
+	Dataset.findByIdAndUpdate(req.params.id, newData)
 		.then(() => res.json({message: 'Dataset updated'}))
 		.catch((err) => res.status(400).json({message: 'Error updating dataset'}));
 });
+module.exports = router;
