@@ -146,10 +146,10 @@ const DataRow = ({data, setData}) => {
 	const time = new Date(parseInt(data.time)).toLocaleTimeString();
 	return (
 		<div className='DataRow'>
-			<input type='text' disabled value={data.index} />
+			<input type='text' disabled value={data.index} id='ordernr' />
+			<input type='number' value={amount} onChange={handleAmountChange} id='amount' />
 			<input type='text' value={material} onChange={handleMaterialChange} />
 			<input type='text' value={chargenr} onChange={handleChargenrChange} />
-			<input type='number' value={amount} onChange={handleAmountChange} />
 			<input type='text' disabled value={`${date + ' ' + time}`} />
 		</div>
 	);
@@ -161,10 +161,10 @@ const Desktop = ({data, setData}) => {
 			<p>Material Erfassung:</p>
 			<div className='Grid'>
 				<div className='Header'>
-					<input type='text' disabled placeholder='Order-Nr' />
+					<input type='text' disabled placeholder='Order-Nr' id='ordernr' />
+					<input type='text' disabled placeholder='Menge' id='amount' />
 					<input type='text' disabled placeholder='Material' />
 					<input type='text' disabled placeholder='Changen-Nr.' />
-					<input type='text' disabled placeholder='Menge' />
 					<input type='text' disabled placeholder='Datum' />
 				</div>
 

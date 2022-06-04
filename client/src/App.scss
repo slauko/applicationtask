@@ -1,12 +1,29 @@
-.Mobile {
-	max-width: 400px;
+* {
+	margin: 0;
+	padding: 0;
+}
 
-	p {
-	}
+.App {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.Mobile {
+	max-width: max-content;
 	.Inputs {
 		.Dropdown {
+			select {
+				width: 100%;
+			}
 		}
 		.Fields {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			input {
+				width: 100%;
+			}
 		}
 		.Buttons {
 			display: flex;
@@ -19,11 +36,19 @@
 }
 
 .Desktop {
+	max-width: max-content;
 	.Grid {
+		margin: 1rem;
 		.Header {
 			input {
 				text-align: center;
 			}
+		}
+		#ordernr {
+			width: 80px;
+		}
+		#amount {
+			width: 80px;
 		}
 	}
 }
